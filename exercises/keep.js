@@ -17,5 +17,35 @@
 //* Begin of tests
 const assert = require('assert');
 
-assert.fail('You must write your own tests');
-// End of tests */
+const keepFirst = function (str) {
+    str = str.substring(0, 2)
+    return str
+}
+
+const keepLast = function (str) {
+    str = str.substring(str.length - 2, str.length)
+    return str
+}
+
+const keepFirstLast = function (str) {
+    let str1 = ''
+    let str2 = ''
+    str1 = str.substring(0, 2)
+    str2 = str.substring(str.length - 2, str.length)
+    return str1 + str2
+}
+//* Begin of tests
+
+assert.strictEqual(typeof keepFirst, 'function');
+assert.deepStrictEqual(keepFirst('hello'), ('he'));
+assert.deepStrictEqual(keepFirst('dinosaure'), ('di'));
+
+
+assert.strictEqual(typeof keepLast, 'function');
+assert.deepStrictEqual(keepLast('hello'), ('lo'));
+assert.deepStrictEqual(keepLast('dinosaure'), ('re'));
+
+
+assert.strictEqual(typeof keepFirstLast, 'function');
+assert.deepStrictEqual(keepFirstLast('bonjour'), ('bour'));
+assert.deepStrictEqual(keepFirstLast('dinosaure'), ('dire'));
