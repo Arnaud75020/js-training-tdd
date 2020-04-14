@@ -8,9 +8,14 @@
  */
 
 // Your code:
+const whisper = function (str) {
+    return `*${str.toLowerCase()}*`
+}
 
 //* Begin of tests
 const assert = require('assert');
 
-assert.fail('You must write your own tests');
 // End of tests */
+assert.strictEqual(typeof whisper, 'function');
+assert.deepStrictEqual(whisper('HELLO'), ('*hello*'));
+assert.deepStrictEqual(whisper('HElLO'), ('*hello*'));
